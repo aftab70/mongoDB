@@ -5,8 +5,28 @@ apt-get update -y
 apt-get upgrade -y
 
 echo "Creating a directory to download required packages"
- mkdir /opt/mongodb
+mkdir /opt/mongodb
  
- echo "Please wait, Packages are downloading"
- wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-mongos_4.0.4_amd64.deb
- wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-shell_4.0.4_amd64.deb 
+echo "Please wait, Packages are downloading"
+wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-server_4.0.4_amd64.deb
+wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-shell_4.0.4_amd64.deb 
+
+echo "Making downloaded packages executable"
+chmod +x /opt/mongodb/*
+
+echo "Installation in under process, please wait for a while"
+dpkg -i /opt/mongodb/mongodb-org-server_4.0.4_amd64.deb
+dpkg -i /opt/mongodb/mongodb-org-shell_4.0.4_amd64.deb
+
+systemctl daemon-reload
+systemctl enable mongod.service
+systemctl start mongod.service
+
+echo "Your mongoDB default installation successful"
+echo "Now MongoDB will listen on localhost and port 27017"
+echo "Default config path is /etc/mongod.conf"
+echo "Default mongodb storage dababase path is  /var/lib/mongodb"
+echo "Default mongo DB log path is /var/log/mongodb/mongod.log"
+echo "MongoDB installation bash script created and modified by Aftab"
+
+
