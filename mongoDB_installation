@@ -9,4 +9,4 @@ echo "Creating a directory to download required packages"
  
  echo "Please wait, Packages are downloading"
  wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-mongos_4.0.4_amd64.deb
- 
+ wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-shell_4.0.4_amd64.deb 
