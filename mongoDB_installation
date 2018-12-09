@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "System is updating and upgrading, please wait for a while"
+apt-get update -y
+apt-get upgrade -y
+
+echo "Creating a directory to download required packages"
+ mkdir /opt/mongodb
+ 
+ echo "Please wait, Packages are downloading"
+ wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-mongos_4.0.4_amd64.deb
+ 
