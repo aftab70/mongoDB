@@ -30,7 +30,7 @@ mongo
 
 use admin
 switched to db admin
-> auth.db("username", "password")
+> db.auth("username", "password")
 
 ----------------------------------------------------------------
 
