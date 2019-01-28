@@ -33,7 +33,12 @@ switched to db admin
 > db.auth("username", "password")
 
 ----------------------------------------------------------------
+To delete user in mongoDB
 
+Commands is 
+db.dropUser("username");
+
+--------------------------------------------------------------------
 
 
 
