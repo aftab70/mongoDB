@@ -18,6 +18,22 @@ setParameter:
 
 How to login using user or password by following the commands:--
 
+----------------------------------------------------------------------------------
 mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "admin"
+----------------------------------------------------------------------------------
+
+or alternate method to verify username and password simply login mongodb to type mongo
+on terminal 
+
+---------------------------------------------------------------
+mongo
+
+use admin
+switched to db admin
+> auth.db("username", "password")
+
+----------------------------------------------------------------
+
+
 
 
