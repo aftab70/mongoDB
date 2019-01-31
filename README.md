@@ -60,6 +60,7 @@ db.runCommand({
 How to create normal user in mongoDB
 
 ------------------------------------------------------------------------------
+
 db.createUser(
    {
      user: "username",
