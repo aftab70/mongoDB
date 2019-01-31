@@ -38,6 +38,23 @@ To delete user in mongoDB
 Commands is 
 db.dropUser("username");
 
+
+use aftab
+db.runCommand({ 
+    "createUser" : "user", 
+    "pwd" : "123456", 
+    "customData" : {
+
+    }, 
+    "roles" : [
+        {
+            "role" : "dbAdmin", 
+            "db" : "aftab"
+        }
+    ]
+});
+
+
 --------------------------------------------------------------------
 
 How to create normal user in mongoDB
@@ -53,3 +70,18 @@ db.createUser(
 
 --------------------------------------------------------------------------------
 
+
+use aftab
+db.runCommand({ 
+    "createUser" : "user", 
+    "pwd" : "123456", 
+    "customData" : {
+
+    }, 
+    "roles" : [
+        {
+            "role" : "dbAdmin", 
+            "db" : "aftab"
+        }
+    ]
+});
