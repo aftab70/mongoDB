@@ -2,8 +2,8 @@ How to create root user using mongoDB
 -----------------------------------------------------------------------------------------------------------------
 use admin
 db.runCommand({ 
-    "createUser" : "root", 
-    "pwd" : "password", 
+    "createUser" : "user", 
+    "pwd" : "123456", 
     "customData" : {
 
     }, 
@@ -12,5 +12,27 @@ db.runCommand({
             "role" : "root", 
             "db" : "admin"
         }
+    ]
+});
+
+
+use aftab
+db.runCommand({ 
+    "createRole" : "cust", 
+    "privileges" : [
+        {
+            "resource" : {
+                "db" : "aftab", 
+                "collection" : ""
+            }, 
+            "actions" : [
+                "find", 
+                "insert", 
+                "update"
+            ]
+        }
+    ], 
+    "roles" : [
+
     ]
 });
