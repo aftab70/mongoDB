@@ -9,8 +9,8 @@ db.runCommand({
     }, 
     "roles" : [
         {
-            "role" : "root", 
-            "db" : "admin"
+            "role" : "cust", 
+            "db" : "aftab"
         }
     ]
 });
