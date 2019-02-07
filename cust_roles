@@ -1,0 +1,22 @@
+custom action:--
+
+use aftab
+db.runCommand({ 
+    "createRole" : "cust", 
+    "privileges" : [
+        {
+            "resource" : {
+                "db" : "aftab", 
+                "collection" : ""
+            }, 
+            "actions" : [
+                "find", 
+                "insert", 
+                "update"
+            ]
+        }
+    ], 
+    "roles" : [
+
+    ]
+});
