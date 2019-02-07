@@ -10,6 +10,7 @@ mkdir /opt/mongodb
 echo "Please wait, Packages are downloading"
 wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-server_4.0.4_amd64.deb
 wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-shell_4.0.4_amd64.deb 
+wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/trusty/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-tools_4.0.5_amd64.deb
 
 echo "Making downloaded packages executable"
 chmod +x /opt/mongodb/*
@@ -17,6 +18,7 @@ chmod +x /opt/mongodb/*
 echo "Installation in under process, please wait for a while"
 dpkg -i /opt/mongodb/mongodb-org-server_4.0.4_amd64.deb
 dpkg -i /opt/mongodb/mongodb-org-shell_4.0.4_amd64.deb
+dpkg -i /opt/mongodb/mongodb-org-tools_4.0.5_amd64.deb
 
 systemctl daemon-reload
 systemctl enable mongod.service
