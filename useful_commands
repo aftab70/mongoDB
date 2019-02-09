@@ -36,3 +36,28 @@ db.runCommand({
 
     ]
 });
+
+
+--------------------------------------------
+
+
+db.runCommand({ 
+    "createRole" : "cust2", 
+    "privileges" : [
+        {
+            "resource" : {
+                "db" : "aftab", 
+                "collection" : ""
+            }, 
+            "actions" : [
+                "find", 
+                "insert", 
+                "update",
+                "deleteOne"
+            ]
+        }
+    ], 
+    "roles" : [
+
+    ]
+});
