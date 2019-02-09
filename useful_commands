@@ -61,3 +61,11 @@ db.runCommand({
 
     ]
 });
+
+--------------------------------------------------------------------------
+"ok" : 0,
+	"errmsg" : "Unrecognized action privilege strings: deleteOne",
+	"code" : 9,
+	"codeName" : "FailedToParse"
+}
+--------------------------------------------------------------------------
