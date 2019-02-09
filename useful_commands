@@ -69,3 +69,24 @@ db.runCommand({
 	"codeName" : "FailedToParse"
 }
 --------------------------------------------------------------------------
+
+db.runCommand({ 
+    "createRole" : "cust", 
+    "privileges" : [
+        {
+            "resource" : {
+                "db" : "aftab2", 
+                "collection" : ""
+            }, 
+            "actions" : [
+                "insert", 
+                "update", 
+                "find", 
+                "remove"
+            ]
+        }
+    ], 
+    "roles" : [
+
+    ]
+});
