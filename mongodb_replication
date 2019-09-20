@@ -61,7 +61,7 @@ systemctl restart mongod.service
 
 # Verify with netstat commands like this :-
 
-netstat  -plntu | grep 270174
+netstat  -plntu | grep 27017
 
 ---------------------------------------------Set Up MongoDB Authentication --------------------------------------------------
 # Generate a Key file by following the commands.
