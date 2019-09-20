@@ -1,4 +1,4 @@
---------------------------------------- mongoDB replicaton configuration ------------------------------------------------------
+############################################## mongoDB replicaton configuration #####################################################
 
 # You need to update and upgrade your ubuntu os by following the commands.
 
@@ -14,7 +14,8 @@ vim /etc/hosts
 10.10.10.11    mongo-node-2
 10.10.10.12    mongo-node-3
 
----------------------------------- Installation and configuration of mongoDB by uisng bash script ------------------------------
+################################ Installation and configuration of mongoDB by uisng bash script #############################
+
 #!/bin/bash
 
 set -e 
@@ -44,7 +45,7 @@ systemctl daemon-reload
 systemctl enable mongod.service
 systemctl start mongod.service
 
------------------------------------------------- Bind IP address with mongoDB-------------------------------------------------------
+######################################### Bind IP address with mongoDB ######################################################
 
 vim /etc/mongod.conf
 
@@ -63,7 +64,8 @@ systemctl restart mongod.service
 
 netstat  -plntu | grep 27017
 
----------------------------------------------  Set Up MongoDB Authentication --------------------------------------------------
+############################################  Set Up MongoDB Authentication #################################################
+
 # Generate a Key file by following the commands.
 
 cd /opt/mongodb/ && openssl rand -base64 756 > mongo-keyfile
