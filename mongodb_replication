@@ -70,6 +70,8 @@ cd /opt/mongodb/ && openssl rand -base64 756 > mongo-keyfile
 
 # Update the file permission and configure with mongoDB config file.
 
+chmod 400 /opt/mongodb/mongo-keyfile && chown mongodb:mongodb /opt/mongodb/mongo-keyfile
+
 
 
 
