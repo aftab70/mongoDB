@@ -78,7 +78,7 @@ vim /etc/mongod.conf
 
 
 security:
-  keyFile: /opt/mongo/mongo-keyfile
+  keyFile: /opt/mongodb/mongo-keyfile
 
 replication:
   replSetName: rs0
