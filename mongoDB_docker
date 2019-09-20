@@ -1,19 +1,26 @@
+--------------------------- Installation and configuration of mongoDB using replication cluster -------------------------------
+# How to create doker container for mongoDB instance by following the commands.
 #Step 1:-  To create docker container used following commands.
 
-        docker run --hostname mongodb-node-1 --name mongodb-node-1 -p 27018:27018 -it ubuntu
-        docker run --hostname mongodb-node-2 --name mongodb-node-2 -p 27019:27019 -it ubuntu
-        docker run --hostname mongodb-node-3 --name mongodb-node-3 -p 27020:27020 -it ubuntu
+docker run --hostname mongodb-node-1 --name mongodb-node-1 -p 27018:27018 -it ubuntu
+docker run --hostname mongodb-node-2 --name mongodb-node-2 -p 27019:27019 -it ubuntu
+docker run --hostname mongodb-node-3 --name mongodb-node-3 -p 27020:27020 -it ubuntu
 
 #Step 2:- To start the created docker container used the following commands.
 
-        docker start mongodb-node-1 mongodb-node-2 mongodb-node-3
+docker start mongodb-node-1 mongodb-node-2 mongodb-node-3
 
 #Step 3:- To login docker used the following commands.
 
-        docker exec -it mongodb-node-1 /bin/bash
-        docker exec -it mongodb-node-2 /bin/bash
-        docker exec -it mongodb-node-3 /bin/bash
+docker exec -it mongodb-node-1 /bin/bash
+docker exec -it mongodb-node-2 /bin/bash
+docker exec -it mongodb-node-3 /bin/bash
 
 #Step 3:- Install required packages in Docker container.
 
-         apt update && apt install vim net-tools iputils-ping wget -y
+apt update && apt install vim net-tools iputils-ping wget -y
+
+Our mongoDB docker step up is completed...
+
+-------------------------------- Installation of mongoDB by using following the commands step by step --------------------------
+
