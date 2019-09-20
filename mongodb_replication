@@ -74,8 +74,18 @@ chmod 400 /opt/mongodb/mongo-keyfile && chown mongodb:mongodb /opt/mongodb/mongo
 
 --------------------------------------------------- Configure MongoDB ----------------------------------------------------------
 
+vim /etc/mongod.conf
 
 
+security:
+  keyFile: /opt/mongo/mongo-keyfile
+
+replication:
+  replSetName: rs0
+  
+Save and exit
+
+-----------------------------------------------------
 
 
 
