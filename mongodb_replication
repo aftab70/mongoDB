@@ -63,6 +63,17 @@ systemctl restart mongod.service
 
 netstat  -plntu | grep 270174
 
+---------------------------------------------Set Up MongoDB Authentication --------------------------------------------------
+# Generate a Key file by following the commands.
+
+cd /opt/mongodb/ && openssl rand -base64 756 > mongo-keyfile
+
+# Update the file permission and configure with mongoDB config file.
+
+
+
+
+
 
 
 
