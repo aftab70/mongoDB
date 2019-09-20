@@ -163,6 +163,12 @@ mongo -u mongo-admin -p --authenticationDatabase admin
 
 rs.initiate()
 
+rs.add("mongo-node-2")
+rs.add("mongo-node-3")
+
+
+
+
 
 
 
