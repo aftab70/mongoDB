@@ -23,4 +23,6 @@ apt update && apt install vim net-tools iputils-ping wget -y
 Our mongoDB docker step up is completed...
 
 -------------------------------- Installation of mongoDB by using following the commands step by step --------------------------
+# To install mongodb-server in docker container use the following commands.
 
+apt install mongodb-server -y
