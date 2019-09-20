@@ -1,0 +1,71 @@
+--------------------------------------- mongoDB replicaton configuration ------------------------------------------------------
+
+# You need to update and upgrade your ubuntu os by following the commands.
+
+sudo apt-get update && sudo apt-get upgrade
+
+# Configure Hosts Files
+
+vim /etc/hosts
+
+# Add the following ip address and hostname according to your env.
+
+10.10.10.10    mongo-node-1
+10.10.10.11    mongo-node-2
+10.10.10.12    mongo-node-3
+
+---------------------------------- Installation and configuration of mongoDB by uisng bash script ------------------------------
+#!/bin/bash
+
+set -e 
+
+echo "System is updating and upgrading, please wait for a while"
+apt-get update -y
+apt-get install libcurl3 -y
+
+echo "Creating a directory to download required packages"
+mkdir /opt/mongodb
+ 
+echo "Please wait, Packages are downloading"
+wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-server_4.0.4_amd64.deb
+wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-shell_4.0.4_amd64.deb 
+wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/trusty/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-tools_4.0.5_amd64.deb
+wget --directory-prefix=/opt/mongodb https://repo.mongodb.org/apt/ubuntu/dists/trusty/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-mongos_4.0.5_amd64.deb
+echo "Making downloaded packages executable"
+chmod +x /opt/mongodb/*
+
+echo "Installation in under process, please wait for a while"
+dpkg -i /opt/mongodb/mongodb-org-server_4.0.4_amd64.deb
+dpkg -i /opt/mongodb/mongodb-org-shell_4.0.4_amd64.deb
+dpkg -i /opt/mongodb/mongodb-org-tools_4.0.5_amd64.deb
+dpkg -i /opt/mongodb/mongodb-org-mongos_4.0.5_amd64.deb
+ 
+systemctl daemon-reload
+systemctl enable mongod.service
+systemctl start mongod.service
+
+------------------------------------------------ Bind IP address with mongoDB-------------------------------------------------------
+
+vim /etc/mongod.conf
+
+# Add your server IP address like this :-
+
+net:
+  port: 27017
+  bindIp: localhost,10.10.10.10
+  
+# Save and exit
+# You need to restart the mongod service bu using following commands.
+
+systemctl restart mongod.service
+
+# Verify with netstat commands like this :-
+
+netstat  -plntu | grep 270174
+
+
+
+
+
+
+
