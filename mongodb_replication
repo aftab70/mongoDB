@@ -72,7 +72,7 @@ cd /opt/mongodb/ && openssl rand -base64 756 > mongo-keyfile
 
 chmod 400 /opt/mongodb/mongo-keyfile && chown mongodb:mongodb /opt/mongodb/mongo-keyfile
 
---------------------------------------------------- Configure MongoDB ----------------------------------------------------------
+################################################## Configure MongoDB #########################################################
 
 vim /etc/mongod.conf
 
@@ -85,7 +85,39 @@ replication:
   
 Save and exit
 
------------------------------------------------------
+############################################### Create an Administrative User ###############################################
+
+Step 1:- Need to create root user using admin database before apply authentication security by following the commands.
+
+To log in Mongo Shell type mongo on linux terminal 
+
+mongo
+-----------------------------------------------------------------------------------------------------------------------------
+use admin
+db.runCommand({ 
+    "createUser" : "admin", 
+    "pwd" : "admin", 
+    "customData" : {
+
+    }, 
+    "roles" : [
+        {
+            "role" : "root", 
+            "db" : "admin"
+        }
+    ]
+});
+
+-----------------------------------------------------------------------------------------------------------------------------
+2nd Commands
+
+db.createUser(
+{	user: "admin",
+	pwd: "admin",
+
+	roles:[{role: "root" , db:"admin"}]})
+
+#############################################################################################################################
 
 
 
