@@ -125,10 +125,14 @@ Step 2:- Need to apply authentication security by following to add lines in mong
 
 vim /etc/mongod.conf
 --------------------------------------------------------------------------------------------------------------------------------
+
 security:
-    authorization: enabled
+  authorization: enabled
+  keyFile: /opt/mongodb/mongo-keyfile
+
 setParameter:
-   enableLocalhostAuthBypass: false
+  enableLocalhostAuthBypass: false
+
 
 --------------------------------------------------------------------------------------------------------------------------------
 
