@@ -16,4 +16,4 @@
 
 #Step 3:- Install required packages in Docker container.
 
-         apt update && apt install vim net-tools iputils-ping -y
+         apt update && apt install vim net-tools iputils-ping wget -y
