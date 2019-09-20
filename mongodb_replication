@@ -159,6 +159,11 @@ systemctl status mongod.service
 
 #############################################################################################################################
 
+mongo -u mongo-admin -p --authenticationDatabase admin
+
+rs.initiate()
+
+
 
 
 
