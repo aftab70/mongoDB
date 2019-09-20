@@ -1,18 +1,18 @@
 #Step 1:-  To create docker container used following commands.
 
-        docker run --hostname redis-sentinal1 --name redis-sentinal1 -p 26389:26389 -p 6389:6389 -it ubuntu
-        docker run --hostname redis-sentinal2 --name redis-sentinal2 -p 26390:26390 -p 6390:6390 -it ubuntu
-        docker run --hostname redis-sentinal3 --name redis-sentinal3 -p 26391:26391 -p 6391:6391 -it ubuntu
+        docker run --hostname mongodb-node-1 --name mongodb-node-1 -p 27018:27018 -it ubuntu
+        docker run --hostname mongodb-node-2 --name mongodb-node-2 -p 27019:27019 -it ubuntu
+        docker run --hostname mongodb-node-3 --name mongodb-node-3 -p 27020:27020 -it ubuntu
 
 #Step 2:- To start the created docker container used the following commands.
 
-        docker start redis-sentinal1 redis-sentinal2 redis-sentinal3
+        docker start mongodb-node-1 mongodb-node-2 mongodb-node-3
 
 #Step 3:- To login docker used the following commands.
 
-        docker exec -it redis-sentinal1 /bin/bash
-        docker exec -it redis-sentinal2 /bin/bash
-        docker exec -it redis-sentinal3 /bin/bash
+        docker exec -it mongodb-node-1 /bin/bash
+        docker exec -it mongodb-node-2 /bin/bash
+        docker exec -it mongodb-node-3 /bin/bash
 
 #Step 3:- Install required packages in Docker container.
 
