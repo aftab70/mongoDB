@@ -143,7 +143,23 @@ systemctl restart mongod.service
 systemctl status mongod.service
 	
 
+############################################# Enable mongoDB replication ####################################################
+
+vim /etc/mongod.conf
+
+replication:
+  replSetName: replication
+  
+Save and exit
+
+To get effect you need to restart your mongoDB service by using given commands. 
+
+systemctl restart mongod.service
+systemctl status mongod.service
+
 #############################################################################################################################
+
+
 
 
 
