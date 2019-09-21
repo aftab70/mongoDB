@@ -166,17 +166,14 @@ rs.initiate()
 rs.add("mongo-node-2")
 rs.add("mongo-node-3")
 
+############################################### Replication Testing #########################################################
+
+rs0:PRIMARY> use exampleDB
+rs0:PRIMARY> for (var i = 0; i <= 10; i++) db.exampleCollection.insert( { x : i } )
+
+rs0:SECONDARY> rs.slaveOk()
+rs0:SECONDARY> use exampleDB
+rs0:SECONDARY> db.exampleCollection.find()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+#############################################################################################################################
