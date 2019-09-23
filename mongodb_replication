@@ -177,3 +177,7 @@ rs0:SECONDARY> db.exampleCollection.find()
 
 
 #############################################################################################################################
+
+mongo --host <IP> --port <port> --eval 'db.isMaster().ismaster'
+
+
