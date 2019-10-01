@@ -1,5 +1,7 @@
 sudo apt-get install python-pymongo
 
+# client = MongoClient('mongodb://user:password@host:port/database')
+
 vim mongo.py
 
 import pymongo
